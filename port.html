@@ -1,0 +1,404 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kalyani Almale — Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+  --primary:#0b2947;
+  --accent:#e0642b;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter, Arial;
+  background:linear-gradient(180deg,#f3f6fb,#eaf0f8);
+  color:var(--primary)
+}
+
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+
+header{
+  height:72px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 32px;
+  box-shadow:0 2px 6px rgba(0,0,0,.05)
+}
+
+.brand{
+  font-family:'Brush Script MT',cursive;
+  font-size:28px
+}
+
+nav .buttons{
+  display:flex;
+  gap:12px
+}
+
+.pill{
+  padding:10px 16px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:600
+}
+
+.blue{background:#a9e1ff}
+.pink{background:#ffcbd3}
+.violet{background:#d6ccff}
+.sand{background:#ffd9b7}
+
+/* HERO */
+
+.hero{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  padding:48px 64px
+}
+
+.greeting{font-size:36px;font-weight:700}
+.name{font-size:40px;font-weight:800}
+.desc{font-size:20px}
+
+.highlight{color:var(--accent)}
+
+.photo-card {
+  width: 260px;           /* Card thoda bada */
+  max-width: 90%;         /* Responsive for small screens */
+  height: 300px;          /* Card height adjust kiya */
+  border-radius: 20px;    /* Rounded corners */
+  overflow: hidden;
+  background: linear-gradient(180deg, #ff8c42, #ffb07a);
+  margin: 10px auto;      /* Center card */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Soft shadow */
+  padding: 10px;          /* Card me thoda space inside */
+  display: flex;          /* Image center karne ke liye */
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* Image box ke andar fit ho jaye */
+  display: block;
+}
+/* TECH STACK */
+
+.techbar{
+  background:var(--accent);
+  color:#fff;
+  padding:14px 32px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px
+}
+
+.chip{
+  background:rgba(255,255,255,.2);
+  padding:6px 12px;
+  border-radius:8px
+}
+
+/* SECTION */
+
+section{
+  padding:60px 64px
+}
+
+.section-title{
+  font-size:42px;
+  margin-bottom:20px
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.service-card{
+background:#fff;
+padding:30px;
+border-radius:14px;
+box-shadow:0 6px 14px rgba(0,0,0,.08);
+transition:0.4s;
+text-align:center;
+cursor:pointer;
+}
+
+.service-card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 12px 25px rgba(0,0,0,.15);
+}
+
+.service-icon{
+font-size:45px;
+color:#e0642b;
+margin-bottom:15px;
+transition:0.4s;
+}
+
+.service-card:hover .service-icon{
+transform:rotate(10deg) scale(1.2);
+color:#ff7a3d;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.project-card{
+background:#fff;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 14px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+}
+
+.project-btn{
+display:inline-block;
+margin-top:10px;
+background:#e0642b;
+color:#fff;
+padding:8px 14px;
+border-radius:6px;
+font-size:14px;
+}
+
+/* CONTACT */
+
+.contact-box{
+max-width:600px;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px
+}
+
+textarea{height:120px}
+
+.send-btn{
+background:#007bff;
+color:#fff;
+border:none;
+padding:12px 20px;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.send-btn:hover{background:#0056c7}
+
+/* FOOTER */
+
+footer{
+background:linear-gradient(180deg,#0b2947,#081c33);
+color:#fff;
+padding:40px 64px
+}
+
+.footer-wrap{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px
+}
+
+.footer-title{
+font-weight:800;
+margin-bottom:12px
+}
+
+.copy{
+text-align:center;
+margin-top:30px;
+font-size:14px;
+opacity:.8
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="brand">Kalyani Almale</div>
+
+<nav>
+<div class="buttons">
+
+<button class="pill blue" onclick="scrollToSection('about')">About</button>
+<button class="pill sand" onclick="scrollToSection('services')">Services</button>
+<button class="pill violet" onclick="scrollToSection('projects')">Projects</button>
+<button class="pill violet" onclick="scrollToSection('contact')">Contact</button>
+
+</div>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+<div class="greeting">Hello!</div>
+<div class="name">I'm <span class="highlight">Kalyani Almale</span></div>
+
+<p class="desc">
+Full-Stack Developer & Web Designer creating clean responsive UI.
+</p>
+</div>
+
+<div class="photo-card">
+<img src="kalyani_image.png" alt="Kalyani">
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="section-title">Services</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+<i class="fa-solid fa-code service-icon"></i>
+<h3>Web Development</h3>
+<p>Building responsive modern websites using HTML, CSS, JavaScript and React.</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-laptop-code service-icon"></i>
+<h3>Frontend Development</h3>
+<p>Creating interactive UI using React, HTML, CSS and JavaScript.</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-database service-icon"></i>
+<h3>Database Design</h3>
+<p>Designing structured databases using MongoDB and MySQL.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project-card">
+
+<h3>MyScheme Website</h3>
+
+<p>
+A web application that helps users explore government schemes easily.
+</p>
+
+<a href="https://github.com/almalekalyani-cyber/Kalyani.git" class="project-btn">
+View Code
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact-box">
+
+<p><b>Phone:</b> +91 7219456379</p>
+<p><b>Email:</b> almalekalyani@gmail.com</p>
+<p><b>Location:</b> Pune, Maharashtra</p>
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message"></textarea>
+
+<button class="send-btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-wrap">
+
+<div>
+<div class="footer-title">Kalyani Almale</div>
+<p>Full Stack MERN Developer</p>
+</div>
+
+<script>
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({
+    behavior:'smooth'
+  });
+}
+</script>
+
+</script>
+
+</body>
+</html><div>
+
+<div class="footer-title">Connect With Me</div>
+
+<a href="https://github.com/almalekalyani-cyber" target="" class="social-link">
+<i class="fa-brands fa-github"></i> GitHub
+</a>
+<br><br>
+
+<a href="https://www.linkedin.com" target="" class="social-link">
+<i class="fa-brands fa-linkedin"></i> LinkedIn
+</a>
+
+</div>
